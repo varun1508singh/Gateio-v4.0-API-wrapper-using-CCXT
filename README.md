@@ -1,56 +1,10 @@
-# Varun Singh
+## Overview
 
-Coding Assessment for Varun Singh.
-
-## Goal
-
-The goal of this assignment is to assess understanding of a third party codebase (CCXT), cleanliness of implementation, and attention to detail; it is not meant to be tricky or difficult.
-
-## Background
-
-We use CCXT (https://github.com/ccxt/ccxt) as a library to help with exchange integrations because it unifies the different exchange responses into a single consistent format which is used throughout the trading system.
-
-However, some exchanges do not have a CCXT implementation, so we need to create our own based on their API documentation.
-
-## Deliverable
-
-Integrate Gate.io v4 in Python as a subclass of ccxt.base.exchange's Exchange.  
+Integration of Gate.io v4 in Python as a subclass of ccxt.base.exchange's Exchange.  
 https://www.gate.io/docs/apiv4/en/index.html#gate-api-v4
 
-The current CCXT implementation only supports v2 but you can (and should) use it as an example / framework to speed things up and make it easier:  
+The current CCXT implementation only supports v2:  
 https://github.com/ccxt/ccxt/blob/master/python/ccxt/gateio.py
-
-The CCXT methods you should implement are as follows:
-- `create_order`
-- `cancel_order`
-- `fetch_order`
-
-Please ensure that the return values for these methods are in the CCXT unified format. Note that you may need to also implement helper methods when necessary (i.e. `sign`, `parse_order`, etc). You should try to use the CCXT implicit methods whenever possible (https://github.com/ccxt/ccxt/wiki/Manual#implicit-api-methods) and also try to handle exchange exceptions as best as possible, mapping them to CCXT exceptions as accurately as you can.
-
-Here are v4 API credentials that you can use (so as to not need to set up your own account):
-```
-{
-    "apiKey":"23b8b4a24e6b093b31f94927d6f0a96e",
-    "secretKey":"c558c602ebbb94a917bd04f2f6c830faf9a0b53d4b900af01968e7b61be668d2"
-}
-```
-There is approximately 0.9 ETH in the account so you can place test orders.
-
-## Notes
-
-Even though CCXT is technically written in JavaScript only and then transpiled into Python and PHP, for the purposes of this exercise you only need to write the Python implementation directly; no need to write the JS version and transpile.
-
-You may use any third party libraries you wish as long as you make it easy to install the dependencies.
-
-## Support
-
-You are strongly encouraged to reach out and ask any questions you would like to get clarity and also make things easier if you are stuck or not sure about anything!
-
-Please do not hesitate to contact me (Han) via Whatsapp at +852 5246 7242 with your questions; just assume that I'm a remote colleague and at your service if you need anything. 
-
-## Extra Credit
-
-If you're feeling extra ambitious...  implement client order ID support for `create_order`, `cancel_order`, and `fetch_order`. A client order ID is a unique identifier for a particular order that's specified by the market participant placing the order, and basically helps link the order back with the algo/strategy that placed the order and keeps track of it.
 
 # Gate.io V4
 
